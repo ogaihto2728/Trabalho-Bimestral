@@ -9,11 +9,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/recyclerView"/>
+            android:layout_height="match_parent" android:id="@+id/ListTask"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true" app:srcCompat="@drawable/ic_add_white_24dp"
-            android:id="@+id/floatingActionButton3" android:focusable="true" app:backgroundTint="@color/colorAccent"
-            app:layout_anchorGravity="right|bottom" app:layout_anchor="@+id/recyclerView" android:layout_margin="20dp"/>
+            android:id="@+id/plus" android:focusable="true" app:backgroundTint="@color/colorAccent"
+            app:layout_anchorGravity="right|bottom" app:layout_anchor="@+id/ListTask" android:layout_margin="20dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
