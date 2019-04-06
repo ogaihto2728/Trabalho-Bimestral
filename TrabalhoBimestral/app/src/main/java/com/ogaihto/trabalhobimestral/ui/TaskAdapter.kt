@@ -40,15 +40,71 @@ class TaskAdapter(
         fun preencherView(task: Task) {
             itemView.editTitle.setText(task.title)
             itemView.editDesc.setText(task.desc)
-//            itemView.editTitle.visibility = View.GONE
-//            itemView.btExcluir.setOnClickListener {
-//                with(this@TaskAdapter) {
-//                    val posicao = tasks.indexOf(task)
-//                    tasks.removeAt(posicao)
-//                    notifyItemRemoved(posicao)
-//                    listener.removedTask(task)
-//                }
-//            }
+            itemView.txtTitle.text = task.title
+
+            when (task.state) {
+                0 -> {
+                    itemView.txtTitle.visibility = View.GONE
+                    itemView.btExcluir.setImageResource(R.drawable.ic_cancel_grey_24dp)
+                    itemView.btExcluir.setOnClickListener {
+                        with(this@TaskAdapter) {
+                            val posicao = tasks.indexOf(task)
+                            tasks.removeAt(posicao)
+                            notifyItemRemoved(posicao)
+                            listener.removedTask(task)
+                        }
+                    }
+                    itemView.btSalvar.setOnClickListener {
+                        with(this@TaskAdapter) {
+                            //Adicionar no banco de dados
+                            task.title = itemView.editTitle.text.toString()
+                            task.desc = itemView.editDesc.text.toString()
+                            task.state = 2
+                            val posicao = tasks.indexOf(task)
+                            notifyItemChanged(posicao)
+                            listener.addedTask(task)
+                        }
+                    }
+                    itemView.requestLayout()
+                }
+                1 -> {
+                    itemView.txtTitle.visibility = View.GONE
+                    itemView.btExcluir.setImageResource(R.drawable.ic_delete)
+                    itemView.btExcluir.setOnClickListener {
+                        with(this@TaskAdapter) {
+                            //remover do banco
+                            val posicao = tasks.indexOf(task)
+                            tasks.removeAt(posicao)
+                            notifyItemRemoved(posicao)
+                            listener.removedTask(task)
+                        }
+                    }
+                    itemView.btSalvar.setOnClickListener {
+                        with(this@TaskAdapter) {
+                            //Adicionar no banco de dados
+                            task.title = itemView.editTitle.text.toString()
+                            task.desc = itemView.editDesc.text.toString()
+                            task.state = 2
+                            val posicao = tasks.indexOf(task)
+                            notifyItemChanged(posicao)
+                        }
+                    }
+
+                }
+                2 -> {
+                    itemView.editDesc.visibility = View.GONE
+                    itemView.editTitle.visibility = View.GONE
+                    itemView.btSalvar.visibility = View.GONE
+                    itemView.btExcluir.visibility = View.GONE
+                    itemView.setOnClickListener {
+                        with(this@TaskAdapter) {
+                            task.state = 1
+                            val posicao = tasks.indexOf(task)
+                            notifyItemChanged(posicao)
+                        }
+                    }
+                }
+            }
 
         }
     }
