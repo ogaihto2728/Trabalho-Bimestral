@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">説明</string>
+    <string name="task">任務</string>
+    <string name="not_saved">保存されていません</string>
+</resources>

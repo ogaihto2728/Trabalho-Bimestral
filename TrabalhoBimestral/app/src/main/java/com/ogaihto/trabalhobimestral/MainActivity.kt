@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogaihto.trabalhobimestral.entities.Task
 import com.ogaihto.trabalhobimestral.ui.TaskAdapter
-import com.ogaihto.trabalhobimestral.ui.TaskListListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 
-class MainActivity : AppCompatActivity(), TaskListListener {
+class MainActivity : AppCompatActivity() {
     lateinit var adapter: TaskAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,23 +30,15 @@ class MainActivity : AppCompatActivity(), TaskListListener {
     }
 
     private fun click() {
-        val task = Task("","")
+        val task = Task("New Task","")
 
         adapter.adicionarTask(task)
 
         plus.hide()
     }
 
-    override fun addedTask(task: Task) {
+    fun showPlus() {
         plus.show()
-    }
-
-    override fun removedTask(task: Task) {
-        plus.show()
-    }
-
-    override fun updatedTask(task: Task) {
-
     }
 
 }

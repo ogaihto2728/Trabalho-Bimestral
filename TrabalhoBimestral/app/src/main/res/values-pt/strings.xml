@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">Descrição</string>
+    <string name="task">Tarefa</string>
+    <string name="not_saved">Não Salvo</string>
+</resources>

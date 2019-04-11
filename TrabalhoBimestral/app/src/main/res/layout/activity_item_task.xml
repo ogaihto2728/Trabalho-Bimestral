@@ -16,22 +16,25 @@
                 android:id="@+id/btExcluir" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/btSalvar" android:layout_marginBottom="8dp"
-        />
+                app:layout_goneMarginBottom="0dp" app:layout_goneMarginEnd="0dp" app:layout_goneMarginLeft="0dp"
+                app:layout_goneMarginRight="0dp" app:layout_goneMarginStart="0dp" app:layout_goneMarginTop="0dp"/>
         <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp" app:srcCompat="@drawable/ic_save"
                 android:id="@+id/btSalvar"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_goneMarginBottom="0dp"
+                app:layout_goneMarginEnd="0dp" app:layout_goneMarginLeft="0dp" app:layout_goneMarginStart="0dp"
+                app:layout_goneMarginRight="0dp" app:layout_goneMarginTop="0dp"/>
         <TextView
-                android:text="Uma task"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/txtTitle"
-                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp" android:textSize="18sp"
-                android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="@+id/editDesc"/>
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" android:textSize="18sp"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/editDesc"
+                android:text="@string/task"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -41,21 +44,24 @@
                 app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="8dp"
-                android:hint="Título" app:layout_constraintEnd_toStartOf="@+id/btSalvar"
-                android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+                android:hint="@string/not_saved" app:layout_constraintEnd_toStartOf="@+id/btSalvar"
+                android:layout_marginEnd="16dp" android:layout_marginRight="16dp" app:layout_goneMarginBottom="0dp"
+                app:layout_goneMarginEnd="0dp" app:layout_goneMarginLeft="0dp" app:layout_goneMarginRight="0dp"
+                app:layout_goneMarginStart="0dp" app:layout_goneMarginTop="0dp"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/editDesc"
-                android:hint="Descrição"
+                android:hint="@string/description"
                 android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="8dp"
                 android:singleLine="false"
                 android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/editTitle"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/editTitle"
-        />
+                app:layout_goneMarginBottom="0dp" app:layout_goneMarginEnd="0dp" app:layout_goneMarginLeft="0dp"
+                app:layout_goneMarginRight="0dp" app:layout_goneMarginStart="0dp" app:layout_goneMarginTop="0dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
