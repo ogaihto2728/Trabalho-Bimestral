@@ -3,5 +3,8 @@
     <string name="description">説明</string>
     <string name="task">任務</string>
     <string name="not_saved">保存されていません</string>
-    <string name="new_task">" 新しい仕事"</string>
+    <string name="new_task">新しい仕事</string>
+    <string name="completed">既成</string>
+    <string name="wip">未完成</string>
+    <string name="share_text">わーい！ 私はこれを終えたばかりです：</string>
 </resources>

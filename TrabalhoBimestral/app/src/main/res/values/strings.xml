@@ -4,4 +4,7 @@
     <string name="new_task">New Task</string>
     <string name="task">Task</string>
     <string name="not_saved">Not Saved</string>
+    <string name="completed">Completed!</string>
+    <string name="wip">Incomplete</string>
+    <string name="share_text">"Yay! I just finished "</string>
 </resources>

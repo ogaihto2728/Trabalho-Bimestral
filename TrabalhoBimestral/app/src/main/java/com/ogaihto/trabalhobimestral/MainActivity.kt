@@ -27,9 +27,8 @@ class MainActivity : AppCompatActivity() {
         taskdao = db.taskDao()
 
         plus.setOnClickListener{
-            click()
+            plus()
         }
-
 
         adapter = TaskAdapter(taskdao.getAll().toMutableList(), this)
         ListTask.adapter = adapter
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun click() {
+    private fun plus() {
         val task = Task(getString(R.string.new_task),"")
 
         adapter.adicionarTask(task)
@@ -61,10 +60,6 @@ class MainActivity : AppCompatActivity() {
 
     fun updateTask(task: Task) {
         taskdao.update(task.id, task.title, task.desc, task.completed)
-    }
-
-    fun findById(id: Int) {
-
     }
 
 }

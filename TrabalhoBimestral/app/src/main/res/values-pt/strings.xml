@@ -2,6 +2,9 @@
 <resources>
     <string name="description">Descrição</string>
     <string name="task">Tarefa</string>
-    <string name="not_saved">Não Salvo</string>
+    <string name="not_saved">Não Salva</string>
     <string name="new_task">Nova Tarefa</string>
+    <string name="completed">Concluída!</string>
+    <string name="wip">Incompleta</string>
+    <string name="share_text">"Oba! Eu acabei de concluir: "</string>
 </resources>

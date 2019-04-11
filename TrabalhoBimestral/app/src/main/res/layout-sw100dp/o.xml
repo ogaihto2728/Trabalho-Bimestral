@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="65dp"
-        android:layout_height="42dp"
-        android:clickable="true" app:srcCompat="@drawable/ic_add_white_48dp" tools:layout_editor_absoluteY="438dp"
-        tools:layout_editor_absoluteX="284dp" android:id="@+id/floatingActionButton4"
-        tools:showIn="@layout/activity_main"/>
