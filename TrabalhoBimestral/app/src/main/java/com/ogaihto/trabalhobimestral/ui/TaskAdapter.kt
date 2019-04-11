@@ -41,8 +41,8 @@ class TaskAdapter(
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun preencherView(task: Task, position: Int) {
-            for (t in tasks)
-                print(tasks.indexOf(t).toString() + " ")
+
+            println(task.id)
             itemView.editTitle.setText(task.title)
             itemView.editDesc.setText(task.desc)
             itemView.txtTitle.text = if (task.id != 0) task.title else task.title + "(${context.getString(R.string.not_saved)})"
@@ -68,8 +68,8 @@ class TaskAdapter(
                     itemView.btSalvar.setOnClickListener {
                         task.title = itemView.editTitle.text.toString()
                         task.desc = itemView.editDesc.text.toString()
-                        //Substituir essa linha por uma inserção no banco de dados.
-                        task.id = 2
+
+                        context.insertTask(task)
 
                         notifyItemChanged(position)
                         focusedIndex = -1
@@ -86,7 +86,9 @@ class TaskAdapter(
                     itemView.btExcluir.setImageResource(R.drawable.ic_delete)
 
                     itemView.btExcluir.setOnClickListener {
-                        //Remover do banco de dados.
+
+                        context.removeTask(task)
+
                         tasks.remove(task)
                         notifyItemRemoved(position)
                         notifyItemRangeChanged(position, tasks.size)
@@ -97,7 +99,9 @@ class TaskAdapter(
                     itemView.btSalvar.setOnClickListener {
                         task.title = itemView.editTitle.text.toString()
                         task.desc = itemView.editDesc.text.toString()
-                        //Atualizar no banco de dados.
+
+                        context.updateTask(task)
+
                         notifyItemChanged(position)
                         focusedIndex = -1
                         context.showPlus()

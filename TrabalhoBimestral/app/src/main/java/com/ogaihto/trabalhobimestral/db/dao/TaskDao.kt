@@ -12,10 +12,10 @@ interface TaskDao {
     fun findById(id: Int): Task?
 
     @Insert
-    fun insert(task: Task)
+    fun insert(task: Task): Long
 
-    @Update
-    fun update(task: Task)
+    @Query("update task set title = :title, description = :description, completed = :completed where id = :id")
+    fun update(id: Int, title: String, description: String, completed: Boolean)
 
     @Delete
     fun remove(task: Task)

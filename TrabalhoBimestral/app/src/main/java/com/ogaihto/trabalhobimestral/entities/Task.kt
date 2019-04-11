@@ -9,7 +9,9 @@ data class Task(
     @ColumnInfo(name= "title")
     var title: String,
     @ColumnInfo(name = "description")
-    var desc: String
+    var desc: String,
+    @ColumnInfo(name = "completed")
+    var completed: Boolean = false
 ){
     @PrimaryKey(autoGenerate = true)
     var id = 0
