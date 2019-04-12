@@ -49,7 +49,6 @@ class TaskAdapter(
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun preencherView(task: Task, position: Int) {
 
-            println(task.id)
             itemView.editTitle.setText(task.title)
             itemView.editDesc.setText(task.desc)
             itemView.txtTitle.text = if (task.id != 0) task.title else task.title + " (${context.getString(R.string.not_saved)})"
